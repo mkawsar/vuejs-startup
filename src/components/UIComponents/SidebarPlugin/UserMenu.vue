@@ -15,7 +15,7 @@
                 <el-collapse-transition>
                     <ul class="nav" v-show="!isClosed">
                         <li>
-                            <a href="javascript:void(0)">
+                            <a href="javascript:void(0)" @click="profileView">
                                 <span class="sidebar-mini">Mp</span>
                                 <span class="sidebar-normal">My Profile</span>
                             </a>
@@ -57,6 +57,9 @@
             logoutUser() {
                 this.$localStorage.clear();
                 this.$router.push({name: 'Login'});
+            },
+            profileView() {
+                this.$router.push({name: 'ShowProfile'})
             }
         }
     }

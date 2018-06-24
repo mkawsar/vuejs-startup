@@ -15,6 +15,7 @@ import Wizard from 'src/components/Dashboard/Views/Forms/Wizard.vue'
 import RegularTables from 'src/components/Dashboard/Views/Tables/RegularTables.vue'
 import ExtendedTables from 'src/components/Dashboard/Views/Tables/ExtendedTables.vue'
 import PaginatedTables from 'src/components/Dashboard/Views/Tables/PaginatedTables.vue'
+import profile from './profile'
 
 
 let formsMenu = {
@@ -92,6 +93,7 @@ const routes = [
             }
         ]
     },
+    profile,
     {
         path: '*',
         component: NotFound

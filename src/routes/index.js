@@ -43,6 +43,7 @@ export default router
 function createRouter() {
     const router = new Router({
         routes,
+        mode: 'history',
         linkActiveClass: 'active'
     });
 

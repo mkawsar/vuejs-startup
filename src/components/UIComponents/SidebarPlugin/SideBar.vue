@@ -10,7 +10,7 @@
                 </div>
             </a>
             <a class="simple-text logo-normal"
-               href="https://www.creative-tim.com/vue-paper-dashboard-pro">
+               href="javascript:void(0)">
                 {{ title }}
             </a>
         </div>
@@ -40,13 +40,13 @@
         props: {
             title: {
                 type: String,
-                default: 'Paper Dashboard Pro'
+                default: 'Vue Project'
             },
             type: {
                 type: String,
                 default: 'sidebar',
                 validator: (value) => {
-                    let acceptedValues = ['sidebar', 'navbar']
+                    let acceptedValues = ['sidebar', 'navbar'];
                     return acceptedValues.indexOf(value) !== -1
                 }
             },
@@ -93,8 +93,8 @@
         },
         methods: {
             async initScrollBarAsync() {
-                await import('perfect-scrollbar/dist/css/perfect-scrollbar.css')
-                const PerfectScroll = await import('perfect-scrollbar')
+                await import('perfect-scrollbar/dist/css/perfect-scrollbar.css');
+                const PerfectScroll = await import('perfect-scrollbar');
                 PerfectScroll.initialize(this.$refs.sidebarScrollArea)
             }
         },
