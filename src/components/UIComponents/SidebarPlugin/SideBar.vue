@@ -22,7 +22,7 @@
                 <slot name="links">
                     <sidebar-item v-for="(link, index) in sidebarLinks"
                                   :key="link.name + index"
-                                  :link="link">
+                                  :link="link" v-show="$auth.can(this, link)">
 
                         <sidebar-item v-for="(subLink, index) in link.children"
                                       :key="subLink.name + index"

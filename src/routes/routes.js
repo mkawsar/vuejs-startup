@@ -76,10 +76,7 @@ let loginPage = {
 };
 
 
-const routes = [
-    formsMenu,
-    tablesMenu,
-    loginPage,
+const baseRoutes = [
     {
         path: '/',
         component: DashboardLayout,
@@ -93,12 +90,18 @@ const routes = [
             }
         ]
     },
-    profile,
     {
         path: '*',
         component: NotFound
     }
 ];
+
+const routes = baseRoutes.concat(
+    profile,
+    formsMenu,
+    tablesMenu,
+    loginPage,
+);
 
 
 export default routes

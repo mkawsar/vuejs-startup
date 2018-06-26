@@ -2,15 +2,16 @@ export default [
     {
         name: 'Dashboard',
         icon: 'ti-panel',
-        path: '/dashboard'
+        path: '/dashboard',
     },
     {
         name: 'Forms',
         icon: 'ti-clipboard',
-        children: [{
-            name: 'Regular Forms',
-            path: '/forms/regular'
-        },
+        children: [
+            {
+                name: 'Regular Forms',
+                path: '/forms/regular'
+            },
             {
                 name: 'Extended Forms',
                 path: '/forms/extended'
@@ -29,10 +30,11 @@ export default [
         name: 'Table List',
         icon: 'ti-view-list-alt',
         collapsed: true,
-        children: [{
-            name: 'Regular Tables',
-            path: '/table-list/regular'
-        },
+        children: [
+            {
+                name: 'Regular Tables',
+                path: '/table-list/regular'
+            },
             {
                 name: 'Extended Tables',
                 path: '/table-list/extended'
