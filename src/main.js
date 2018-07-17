@@ -17,6 +17,9 @@ import SideBar from './components/UIComponents/SidebarPlugin'
 // router setup
 import routes from './routes'
 
+// store import
+import { store } from './store/store'
+
 // library imports
 
 import './assets/sass/paper-dashboard.scss'
@@ -47,17 +50,9 @@ import auth from "./services/auth";
 Vue.prototype.$auth = auth;
 import notification from "./services/notification"
 Vue.prototype.$notification = notification;
-//Vue.http.headers.common['Access-Control-Allow-Origin'] = '*';
-//Vue.http.options.xhr = { withCredentials : true };
-// configure router
-/*const router = new VueRouter({
-    routes, // short for routes: routes
-    linkActiveClass: 'active'
-});*/
-
-/* eslint-disable no-new */
 new Vue({
     el: '#app',
     render: h => h(App),
+    store: store,
     router: routes
 });

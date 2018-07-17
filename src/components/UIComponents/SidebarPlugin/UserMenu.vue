@@ -1,14 +1,14 @@
 <template>
     <div class="user">
         <div class="photo">
-            <img src="static/img/faces/face-2.jpg"/>
+            <img :src="user.profile_picture"/>
         </div>
         <div class="info">
             <a data-toggle="collapse" @click="toggleMenu" href="javascript:void(0)">
            <span>
-             Chet Faker
+             {{ user.name }}
              <b class="caret"></b>
-          </span>
+           </span>
             </a>
             <div class="clearfix"></div>
             <div>
@@ -21,15 +21,17 @@
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">
+                            <a href="javascript:void(0)" @click="profileEdit">
                                 <span class="sidebar-mini">Ep</span>
                                 <span class="sidebar-normal">Edit Profile</span>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)" @click="logoutUser">
-                                <span class="sidebar-mini">O</span>
-                                <span class="sidebar-normal">Logout</span>
+                                <span class="text-danger">
+                                    <span class="sidebar-mini">L</span>
+                                    <span class="sidebar-normal">Log Out</span>
+                                </span>
                             </a>
                         </li>
                     </ul>
@@ -39,17 +41,25 @@
     </div>
 </template>
 <script>
-    import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
+    import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
 
     export default {
         components: {
             [CollapseTransition.name]: CollapseTransition
         },
         data() {
+            //console.log(this.$store.getters);
             return {
                 isClosed: true
             }
         },
+
+        computed: {
+            user() {
+                return this.$store.getters.user;
+            }
+        },
+
         methods: {
             toggleMenu() {
                 this.isClosed = !this.isClosed
@@ -60,7 +70,13 @@
             },
             profileView() {
                 this.$router.push({name: 'ShowProfile'})
+            },
+            profileEdit() {
+                this.$router.push({name: 'EditProfile'});
             }
+        },
+        mounted() {
+            this.$store.commit('setUser', this.$localStorage.get('user'));
         }
     }
 </script>
