@@ -88,7 +88,6 @@
                 axios.get(this.$env.BACKEND_API + '/api/v1/auth/profile')
                     .then((response) => {
                         this.user = response.data;
-                        //console.log(response.data);
                     })
                     .catch((error) => {
                         console.log(error.data);

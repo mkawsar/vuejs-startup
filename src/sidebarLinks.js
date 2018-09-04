@@ -44,5 +44,11 @@ export default [
                 path: '/table-list/paginated'
             }
         ]
-    }
+    },
+    {
+        name: 'Customer List',
+        icon: 'ti-user',
+        path: 'customer-list',
+        meta: { requireAuth: true, roles: ['SysAdmin'] }
+    },
 ]

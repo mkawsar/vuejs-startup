@@ -16,6 +16,7 @@ import RegularTables from 'src/components/Dashboard/Views/Tables/RegularTables.v
 import ExtendedTables from 'src/components/Dashboard/Views/Tables/ExtendedTables.vue'
 import PaginatedTables from 'src/components/Dashboard/Views/Tables/PaginatedTables.vue'
 import profile from './profile'
+import customer from "./customer";
 
 
 let formsMenu = {
@@ -98,6 +99,7 @@ const baseRoutes = [
 
 const routes = baseRoutes.concat(
     profile,
+    customer,
     formsMenu,
     tablesMenu,
     loginPage,
